@@ -49,6 +49,7 @@ function schema_3D(){
 if(is_singular( 'product' )){
 $product = wc_get_product();
 $id = $product->get_id();
+$productTitle = $product->get_title();
 $product_img=wp_get_attachment_url( $product->get_image_id() );
 $get_usdz=get_post_meta($id, '_3DSchema_product__usdz', true);
 $get_glb=get_post_meta($id, '_3DSchema_product__glb', true);
@@ -61,7 +62,7 @@ if(!$get_usdz=='' && !$get_glb==''){
                 "@context": "http://schema.org",
                 "@type": "3DModel",
                 "image": "'.$product_img.'",
-                "name": "Keurig K-Mini Single-Serve K-Cup Pod Coffee Maker - Black",
+                "name": "'.$productTitle.'",
                 "encoding": [
                     { "@type": "MediaObject", "contentUrl": "'.$get_glb.'", "encodingFormat": "model/gltf-binary" },
                     { "@type": "MediaObject", "contentUrl": "'.$get_usdz.'", "encodingFormat": "model/vnd.usdz+zip" }
