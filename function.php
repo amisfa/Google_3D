@@ -8,13 +8,12 @@ function woocommerce_product_3DSchema_fields()
 {
     global $woocommerce, $post;
     echo '<div class="product_3DSchema_field">';
-    echo '<h3>تنها برای اسکیما 3D</h3>';
-    echo '<h4>فقط در صورتی که میخوای این ساختار تو این صفحه محصولت باشه، فایل رو تو هاست دانلود آپلود کن و لینکشو اینجا قرار بده</h4>';
+    echo '<h4>if you want active google AR/VR features add link to these field</h4>';
 //field input
 woocommerce_wp_text_input(
 array(
     'id' => '_3DSchema_product__glb',
-    'placeholder' => 'نسخه glb :',
+    'placeholder' => 'glb:',
     'label' => __('glb', 'woocommerce'),
     'style'=>'direction: ltr;'
 )
@@ -22,7 +21,7 @@ array(
 woocommerce_wp_text_input(
         array(
     'id' => '_3DSchema_product__usdz',
-    'placeholder' => 'نسخه usdz :',
+    'placeholder' => 'usdz',
     'label' => __('usdz', 'woocommerce'),
     'style'=>'direction: ltr;'
 )
